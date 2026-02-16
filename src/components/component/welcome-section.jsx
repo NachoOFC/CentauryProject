@@ -31,50 +31,87 @@ import Link from "next/link"
 export function WelcomeSection() {
   return (
     (<div className="flex flex-col min-h-[100dvh]">
-      <header className="bg-gray-900 text-white py-4 px-6 md:px-12">
+      <header className="bg-gradient-to-r from-violet-900 to-purple-800 text-white py-4 px-6 md:px-12 sticky top-0 z-50 shadow-lg">
         <div className="container mx-auto flex items-center justify-between">
-          <h1 className="text-2xl font-bold">Piedras Preciosas</h1>
-          <nav className="hidden md:flex items-center space-x-6">
-            <a className="hover:text-gray-300" href="#">
+          <h1 className="text-2xl font-bold flex items-center gap-2">
+            <span className="text-amber-400">💎</span> Piedras Preciosas
+          </h1>
+          <nav className="hidden md:flex items-center space-x-8">
+            <a className="hover:text-amber-300 transition-colors font-medium" href="#">
               Inicio
             </a>
-            <a className="hover:text-gray-300" href="#">
+            <a className="hover:text-amber-300 transition-colors font-medium" href="#about">
               Sobre Nosotros
             </a>
-            <a className="hover:text-gray-300" href="#">
+            <a className="hover:text-amber-300 transition-colors font-medium" href="#gallery">
               Catálogo
             </a>
-            <a className="hover:text-gray-300" href="#">
+            <a className="hover:text-amber-300 transition-colors font-medium" href="#contact">
               Contacto
             </a>
           </nav>
-          <button className="md:hidden">
+          <button className="md:hidden text-white">
             <MenuIcon className="h-6 w-6" />
           </button>
         </div>
       </header>
+      
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-violet-900 via-purple-800 to-indigo-900 text-white py-24 md:py-32">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        <div className="container mx-auto px-6 md:px-12 text-center relative z-10">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            Descubre la <span className="text-amber-400">Magia</span> de las Gemas
+          </h2>
+          <p className="text-xl md:text-2xl text-purple-200 max-w-2xl mx-auto mb-8">
+            Piedras preciosas únicas que reflejan tu esencia y elevan tu estilo
+          </p>
+          <Button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-3 text-lg rounded-full transition-all hover:scale-105">
+            Explorar Colección
+          </Button>
+        </div>
+      </section>
+      
       <main className="flex-1">
-        <section className="py-12 md:py-20 bg-gray-100" id="about">
+        <section className="py-16 md:py-24 bg-white" id="about">
           <div className="container mx-auto px-6 md:px-12">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-4">Bienvenido a Piedras Preciosas</h2>
-                <p className="text-gray-700 leading-relaxed">
+                <span className="text-violet-600 font-semibold text-sm uppercase tracking-wider">Nuestra Historia</span>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 mt-2">
+                  Bienvenido a <span className="text-violet-600">Piedras Preciosas</span>
+                </h2>
+                <p className="text-gray-600 leading-relaxed text-lg">
                   En nuestra tienda, ofrecemos una amplia selección de piedras preciosas y semipreciosas de la más alta
                   calidad. Desde amatistas hasta zafiros, tenemos todo lo que necesitas para complementar tu estilo
                   único.
                 </p>
-                <p className="text-gray-700 leading-relaxed mt-4">
+                <p className="text-gray-600 leading-relaxed mt-4 text-lg">
                   Nuestro equipo de expertos está dedicado a brindarte una experiencia de compra excepcional. Explora
                   nuestra colección y déjate inspirar por la belleza y el poder de estas piedras milenarias.
                 </p>
+                <div className="mt-8 flex gap-8">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-violet-600">500+</div>
+                    <div className="text-gray-500 text-sm">Piedras Únicas</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-violet-600">15+</div>
+                    <div className="text-gray-500 text-sm">Años de Experiencia</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-violet-600">2000+</div>
+                    <div className="text-gray-500 text-sm">Clientes Felices</div>
+                  </div>
+                </div>
               </div>
-              <div>
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-violet-500 to-amber-500 rounded-2xl blur-2xl opacity-20"></div>
                 <img
                   alt="Piedras Preciosas"
-                  className="rounded-lg shadow-lg"
+                  className="rounded-2xl shadow-2xl relative z-10"
                   height={400}
-                  src="/placeholder.svg"
+                  src="https://images.unsplash.com/photo-1551122087-f99a4cb0ac98?w=600&q=80"
                   style={{
                     aspectRatio: "600/400",
                     objectFit: "cover",
@@ -84,73 +121,89 @@ export function WelcomeSection() {
             </div>
           </div>
         </section>
-        <section className="py-12 md:py-20" id="gallery">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-purple-50 to-white" id="gallery">
           <div className="container mx-auto px-6 md:px-12">
-            <h2 className="text-3xl font-bold mb-8 text-center">Nuestras Piedras Más Populares</h2>
+            <div className="text-center mb-12">
+              <span className="text-violet-600 font-semibold text-sm uppercase tracking-wider">Colección Destacada</span>
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 text-gray-900">Nuestras Piedras Más Populares</h2>
+              <p className="text-gray-600 mt-4 max-w-2xl mx-auto">Cada piedra cuenta una historia única de millones de años</p>
+            </div>
             <div
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              <div className="rounded-lg overflow-hidden shadow-lg">
-                <img
-                  alt="Piedra 1"
-                  className="w-full h-64 object-cover"
-                  height={300}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "300/300",
-                    objectFit: "cover",
-                  }}
-                  width={300} />
-                <div className="p-4">
-                  <h3 className="text-lg font-bold mb-2">Amatista</h3>
-                  <p className="text-gray-700">Una piedra preciosa de color púrpura con propiedades curativas.</p>
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+              <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="relative overflow-hidden">
+                  <img
+                    alt="Piedra 1"
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    height={300}
+                    src="https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?w=400&q=80"
+                    style={{
+                      aspectRatio: "300/300",
+                      objectFit: "cover",
+                    }}
+                    width={300} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold mb-2 text-gray-900">Amatista</h3>
+                  <p className="text-gray-600 text-sm">Una piedra preciosa de color púrpura con propiedades curativas.</p>
                 </div>
               </div>
-              <div className="rounded-lg overflow-hidden shadow-lg">
-                <img
-                  alt="Piedra 2"
-                  className="w-full h-64 object-cover"
-                  height={300}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "300/300",
-                    objectFit: "cover",
-                  }}
-                  width={300} />
-                <div className="p-4">
-                  <h3 className="text-lg font-bold mb-2">Ópalo</h3>
-                  <p className="text-gray-700">Una piedra preciosa con un juego de colores único y cautivador.</p>
+              <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="relative overflow-hidden">
+                  <img
+                    alt="Piedra 2"
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    height={300}
+                    src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&q=80"
+                    style={{
+                      aspectRatio: "300/300",
+                      objectFit: "cover",
+                    }}
+                    width={300} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold mb-2 text-gray-900">Ópalo</h3>
+                  <p className="text-gray-600 text-sm">Una piedra preciosa con un juego de colores único y cautivador.</p>
                 </div>
               </div>
-              <div className="rounded-lg overflow-hidden shadow-lg">
-                <img
-                  alt="Piedra 3"
-                  className="w-full h-64 object-cover"
-                  height={300}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "300/300",
-                    objectFit: "cover",
-                  }}
-                  width={300} />
-                <div className="p-4">
-                  <h3 className="text-lg font-bold mb-2">Rubí</h3>
-                  <p className="text-gray-700">Una piedra preciosa de color rojo intenso, símbolo de pasión y poder.</p>
+              <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="relative overflow-hidden">
+                  <img
+                    alt="Piedra 3"
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    height={300}
+                    src="https://images.unsplash.com/photo-1583937443566-6ade3f8e8e95?w=400&q=80"
+                    style={{
+                      aspectRatio: "300/300",
+                      objectFit: "cover",
+                    }}
+                    width={300} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold mb-2 text-gray-900">Rubí</h3>
+                  <p className="text-gray-600 text-sm">Una piedra preciosa de color rojo intenso, símbolo de pasión y poder.</p>
                 </div>
               </div>
-              <div className="rounded-lg overflow-hidden shadow-lg">
-                <img
-                  alt="Piedra 4"
-                  className="w-full h-64 object-cover"
-                  height={300}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "300/300",
-                    objectFit: "cover",
-                  }}
-                  width={300} />
-                <div className="p-4">
-                  <h3 className="text-lg font-bold mb-2">Esmeralda</h3>
-                  <p className="text-gray-700">
+              <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="relative overflow-hidden">
+                  <img
+                    alt="Piedra 4"
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    height={300}
+                    src="https://images.unsplash.com/photo-1608042314453-ae338d80c427?w=400&q=80"
+                    style={{
+                      aspectRatio: "300/300",
+                      objectFit: "cover",
+                    }}
+                    width={300} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold mb-2 text-gray-900">Esmeralda</h3>
+                  <p className="text-gray-600 text-sm">
                     Una piedra preciosa de color verde brillante, símbolo de esperanza y renovación.
                   </p>
                 </div>
@@ -158,17 +211,22 @@ export function WelcomeSection() {
             </div>
           </div>
         </section>
-        <section className="py-12 md:py-20 bg-gray-100" id="catalog">
+        <section className="py-16 md:py-24 bg-white" id="catalog">
           <div className="container mx-auto px-6 md:px-12">
-            <h2 className="text-3xl font-bold mb-8 text-center">Explora Nuestro Catálogo</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white rounded-lg shadow-lg p-6">
-                <h3 className="text-lg font-bold mb-4">Filtros</h3>
+            <div className="text-center mb-12">
+              <span className="text-violet-600 font-semibold text-sm uppercase tracking-wider">Tienda</span>
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 text-gray-900">Explora Nuestro Catálogo</h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl shadow-lg p-6 border border-purple-100">
+                <h3 className="text-lg font-bold mb-4 text-violet-800 flex items-center gap-2">
+                  <span>🔍</span> Filtros
+                </h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="type">Tipo</Label>
+                    <Label htmlFor="type" className="text-gray-700 font-medium">Tipo</Label>
                     <Select className="w-full" id="type">
-                      <SelectTrigger>
+                      <SelectTrigger className="mt-1 border-purple-200 focus:border-violet-500">
                         <SelectValue placeholder="Selecciona un tipo" />
                       </SelectTrigger>
                       <SelectContent>
@@ -180,9 +238,9 @@ export function WelcomeSection() {
                     </Select>
                   </div>
                   <div>
-                    <Label htmlFor="color">Color</Label>
+                    <Label htmlFor="color" className="text-gray-700 font-medium">Color</Label>
                     <Select className="w-full" id="color">
-                      <SelectTrigger>
+                      <SelectTrigger className="mt-1 border-purple-200 focus:border-violet-500">
                         <SelectValue placeholder="Selecciona un color" />
                       </SelectTrigger>
                       <SelectContent>
@@ -194,9 +252,9 @@ export function WelcomeSection() {
                     </Select>
                   </div>
                   <div>
-                    <Label htmlFor="size">Tamaño</Label>
+                    <Label htmlFor="size" className="text-gray-700 font-medium">Tamaño</Label>
                     <Select className="w-full" id="size">
-                      <SelectTrigger>
+                      <SelectTrigger className="mt-1 border-purple-200 focus:border-violet-500">
                         <SelectValue placeholder="Selecciona un tamaño" />
                       </SelectTrigger>
                       <SelectContent>
@@ -207,9 +265,9 @@ export function WelcomeSection() {
                     </Select>
                   </div>
                   <div>
-                    <Label htmlFor="price">Precio</Label>
+                    <Label htmlFor="price" className="text-gray-700 font-medium">Precio</Label>
                     <Select className="w-full" id="price">
-                      <SelectTrigger>
+                      <SelectTrigger className="mt-1 border-purple-200 focus:border-violet-500">
                         <SelectValue placeholder="Selecciona un rango de precio" />
                       </SelectTrigger>
                       <SelectContent>
@@ -221,90 +279,90 @@ export function WelcomeSection() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-lg shadow-lg p-6 col-span-2 lg:col-span-2">
-                <h3 className="text-lg font-bold mb-4">Resultados</h3>
+              <div className="bg-white rounded-2xl shadow-lg p-6 col-span-2 lg:col-span-2 border border-gray-100">
+                <h3 className="text-lg font-bold mb-4 text-gray-900">Resultados</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                  <div className="rounded-lg overflow-hidden shadow-lg">
+                  <div className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white border border-gray-100">
                     <img
                       alt="Piedra 1"
-                      className="w-full h-64 object-cover"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       height={300}
-                      src="/placeholder.svg"
+                      src="https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?w=400&q=80"
                       style={{
                         aspectRatio: "300/300",
                         objectFit: "cover",
                       }}
                       width={300} />
                     <div className="p-4">
-                      <h3 className="text-lg font-bold mb-2">Amatista</h3>
-                      <p className="text-gray-700">Una piedra preciosa de color púrpura con propiedades curativas.</p>
+                      <h3 className="text-lg font-bold mb-2 text-gray-900">Amatista</h3>
+                      <p className="text-gray-600 text-sm">Una piedra preciosa de color púrpura con propiedades curativas.</p>
                       <div className="flex justify-between items-center mt-4">
-                        <span className="text-gray-700 font-bold">$50</span>
-                        <Button size="sm">Agregar al carrito</Button>
+                        <span className="text-violet-600 font-bold text-lg">$50</span>
+                        <Button size="sm" className="bg-violet-600 hover:bg-violet-700">Agregar</Button>
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-lg overflow-hidden shadow-lg">
+                  <div className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white border border-gray-100">
                     <img
                       alt="Piedra 2"
-                      className="w-full h-64 object-cover"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       height={300}
-                      src="/placeholder.svg"
+                      src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&q=80"
                       style={{
                         aspectRatio: "300/300",
                         objectFit: "cover",
                       }}
                       width={300} />
                     <div className="p-4">
-                      <h3 className="text-lg font-bold mb-2">Ópalo</h3>
-                      <p className="text-gray-700">Una piedra preciosa con un juego de colores único y cautivador.</p>
+                      <h3 className="text-lg font-bold mb-2 text-gray-900">Ópalo</h3>
+                      <p className="text-gray-600 text-sm">Una piedra preciosa con un juego de colores único y cautivador.</p>
                       <div className="flex justify-between items-center mt-4">
-                        <span className="text-gray-700 font-bold">$75</span>
-                        <Button size="sm">Agregar al carrito</Button>
+                        <span className="text-violet-600 font-bold text-lg">$75</span>
+                        <Button size="sm" className="bg-violet-600 hover:bg-violet-700">Agregar</Button>
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-lg overflow-hidden shadow-lg">
+                  <div className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white border border-gray-100">
                     <img
                       alt="Piedra 3"
-                      className="w-full h-64 object-cover"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       height={300}
-                      src="/placeholder.svg"
+                      src="https://images.unsplash.com/photo-1583937443566-6ade3f8e8e95?w=400&q=80"
                       style={{
                         aspectRatio: "300/300",
                         objectFit: "cover",
                       }}
                       width={300} />
                     <div className="p-4">
-                      <h3 className="text-lg font-bold mb-2">Rubí</h3>
-                      <p className="text-gray-700">
+                      <h3 className="text-lg font-bold mb-2 text-gray-900">Rubí</h3>
+                      <p className="text-gray-600 text-sm">
                         Una piedra preciosa de color rojo intenso, símbolo de pasión y poder.
                       </p>
                       <div className="flex justify-between items-center mt-4">
-                        <span className="text-gray-700 font-bold">$100</span>
-                        <Button size="sm">Agregar al carrito</Button>
+                        <span className="text-violet-600 font-bold text-lg">$100</span>
+                        <Button size="sm" className="bg-violet-600 hover:bg-violet-700">Agregar</Button>
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-lg overflow-hidden shadow-lg">
+                  <div className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white border border-gray-100">
                     <img
                       alt="Piedra 4"
-                      className="w-full h-64 object-cover"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       height={300}
-                      src="/placeholder.svg"
+                      src="https://images.unsplash.com/photo-1608042314453-ae338d80c427?w=400&q=80"
                       style={{
                         aspectRatio: "300/300",
                         objectFit: "cover",
                       }}
                       width={300} />
                     <div className="p-4">
-                      <h3 className="text-lg font-bold mb-2">Esmeralda</h3>
-                      <p className="text-gray-700">
+                      <h3 className="text-lg font-bold mb-2 text-gray-900">Esmeralda</h3>
+                      <p className="text-gray-600 text-sm">
                         Una piedra preciosa de color verde brillante, símbolo de esperanza y renovación.
                       </p>
                       <div className="flex justify-between items-center mt-4">
-                        <span className="text-gray-700 font-bold">$125</span>
-                        <Button size="sm">Agregar al carrito</Button>
+                        <span className="text-violet-600 font-bold text-lg">$125</span>
+                        <Button size="sm" className="bg-violet-600 hover:bg-violet-700">Agregar</Button>
                       </div>
                     </div>
                   </div>
@@ -314,29 +372,32 @@ export function WelcomeSection() {
           </div>
         </section>
       </main>
-      <footer className="bg-gray-900 text-white py-8 px-6 md:px-12" id="contact">
+      <footer className="bg-gradient-to-r from-violet-900 to-purple-800 text-white py-12 px-6 md:px-12" id="contact">
         <div
-          className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+          className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h3 className="text-lg font-bold mb-2">Contáctanos</h3>
-            <p className="text-gray-400">Estamos aquí para ayudarte con cualquier pregunta o inquietud que tengas.</p>
-            <div className="mt-4 flex space-x-4">
-              <Link className="text-gray-400 hover:text-white" href="#">
-                <MailIcon className="h-6 w-6" />
+            <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+              <span className="text-amber-400">💎</span> Contáctanos
+            </h3>
+            <p className="text-purple-200">Estamos aquí para ayudarte con cualquier pregunta o inquietud que tengas.</p>
+            <div className="mt-6 flex space-x-4">
+              <Link className="bg-white/10 p-3 rounded-full hover:bg-amber-500 transition-colors" href="#">
+                <MailIcon className="h-5 w-5" />
               </Link>
-              <Link className="text-gray-400 hover:text-white" href="#">
-                <PhoneIcon className="h-6 w-6" />
+              <Link className="bg-white/10 p-3 rounded-full hover:bg-amber-500 transition-colors" href="#">
+                <PhoneIcon className="h-5 w-5" />
               </Link>
-              <Link className="text-gray-400 hover:text-white" href="#">
-                <FacebookIcon className="h-6 w-6" />
+              <Link className="bg-white/10 p-3 rounded-full hover:bg-amber-500 transition-colors" href="#">
+                <FacebookIcon className="h-5 w-5" />
               </Link>
-              <Link className="text-gray-400 hover:text-white" href="#">
-                <InstagramIcon className="h-6 w-6" />
+              <Link className="bg-white/10 p-3 rounded-full hover:bg-amber-500 transition-colors" href="#">
+                <InstagramIcon className="h-5 w-5" />
               </Link>
             </div>
           </div>
-          <div className="mt-6 md:mt-0">
-            <p className="text-gray-400">© 2023 Piedras Preciosas. Todos los derechos reservados.</p>
+          <div className="text-center md:text-right">
+            <p className="text-purple-200">© 2026 Piedras Preciosas</p>
+            <p className="text-purple-300 text-sm mt-1">Todos los derechos reservados</p>
           </div>
         </div>
       </footer>
