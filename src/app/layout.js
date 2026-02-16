@@ -7,8 +7,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Piedras Preciosas | Joyería Exclusiva",
-  description: "Descubre nuestra colección exclusiva de piedras preciosas y semipreciosas de la más alta calidad",
+  title: "Piedras Preciosas | Venta de Piedras Naturales",
+  description: "Venta de piedras naturales. Las mejores piedras para jardines, macetas, acuarios y decoración.",
 };
 
 export default function RootLayout({ children }) {
